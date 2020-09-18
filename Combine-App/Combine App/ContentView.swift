@@ -59,8 +59,9 @@ struct ContentView: View {
     @ObservedObject  var userViewModel = UserViewModel()
     @State var showHiddenView: Bool = false
     var body: some View {
+        ScrollView {
         VStack {
-            Text("Check all and type your email in order to submit")
+            Text("Check all and type your email in order to submit").minimumScaleFactor(0.5)
             
             VStack(alignment: .leading){
                 
@@ -117,6 +118,7 @@ struct ContentView: View {
             .padding(.top, 100)
             .padding(.horizontal)
             Spacer()
+        }
             
             if self.showHiddenView {
                 Text("Yay!! You did it!")
